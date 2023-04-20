@@ -79,7 +79,7 @@
       return TextScramble;
     }();
     
-    var phrases = ["so basically, this is a thing", "name is daniel", "could've used something easier but ok", "javascript sucks did you know?", "and css is bad too", "ASM or c++ is easier than web development"];
+    var phrases = ["so basically, this is a thing", "name is daniel", "could've used something easier but ok", "javascript sucks did you know?", "and css is bad too", "ASM or c++ is easier than web development", "oh also this is on loop", "if you want you can stay here for 10 min", "song mix is 10 min so u good", "this is a secret for main webpage"];
     
     var el = document.querySelector('.text');
     var fx = new TextScramble(el);
