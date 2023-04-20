@@ -79,7 +79,7 @@
       return TextScramble;
     }();
     
-    var phrases = [ "Have fun reading this", "this is basically a presentation about me", "i like lua","javascript sucks","had to ask friend for help","github.com/lmoboy or github.com/vtdt", "isn't this animation great?", "Telegram: AzverexD","call me ;)","...","...","somebody help ;-;","this is not fun anymore", "it's hard to contain emotions", "i want to cry every day", "if only there was a cure", "are you having fun?", "i hope you do :)", "because i don't", "this is on repeat so don't bother", "if you like the song just shazam"];
+    var phrases = ["so basically, this is a thing", "name is daniel", "could've used something easier but ok", "javascript sucks did you know?", "and css is bad too", "ASM or c++ is easier than web development"];
     
     var el = document.querySelector('.text');
     var fx = new TextScramble(el);
