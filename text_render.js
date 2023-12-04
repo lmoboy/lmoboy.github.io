@@ -79,7 +79,28 @@
       return TextScramble;
     }();
     
-    var phrases = ["so basically, this is a thing", "name is daniel", "could've used something easier but ok", "javascript sucks did you know?", "and css is bad too", "ASM or c++ is easier than web development", "oh also this is on loop", "if you want you can stay here for 10 min", "song mix is 10 min so u good", "this is a secret for main webpage"];
+    var phrases = [
+        "so basically, this is a thing",
+        "name is daniel",
+        "aka AzverexD",
+        "could've used something easier but ok",
+        "javascript kinda sucks",
+        "ASM or c++ is easier than web development",
+        "I would love to share something",
+        "I really like this animation",
+        "if you are wondering how this works",
+        "here is an explanation by ai",
+        "The `var phrases` variable is an array of strings that contains the phrases that will be displayed on the screen.",
+        "The `var el` variable is a reference to the div element with the class `text`.",
+        "The `var fx` variable is a reference to the `TextScramble` object that is used to animate the text.",
+        "The `var counter` variable is used to keep track of the current phrase in the `var phrases` array.",
+        "The `var next` function is used to call the `setText()` method on the `fx` object and then schedule a call to the `next()` function again after phrase length * 60.",
+        "The `var clicked` variable is used to keep track of whether or not the user has clicked on the screen.",
+        "The `document.onclick` event handler is used to call the `next()` function when the user clicks on the screen.",
+        "oh also this is on loop",
+        "if you want you can stay here for 10 min",
+        "song mix is 10 min so u good"
+    ];
     
     var el = document.querySelector('.text');
     var fx = new TextScramble(el);
@@ -87,22 +108,23 @@
     var counter = 0;
     var next = function next() {
       fx.setText(phrases[counter]).then(function () {
-        setTimeout(next, 1500);
+          counter === 0 ? console.log(phrases[counter].length * 60 / 1000 + " : sec") : console.log(phrases[counter - 1].length * 60/ 1000 + " : sec")
+        setTimeout(next, phrases[counter === 0 ? counter : counter - 1].length * 60);
       });
       counter = (counter + 1) % phrases.length;
     };
-    
+
     var clicked = false;
-    if(clicked == false){
-      fx.setText("click to start the animation")
+    if (!clicked){
+        fx.setText("click to start the animation");
     }
     document.onclick = () => {
-      if (clicked)return;
-      clicked = true;
-      var aud = new Audio("music.mp3");
-      aud.loop = true;
-      aud.play();
-      
-  
-      next();
+        if (clicked) {
+            return;
+        }
+        clicked = true;
+        var aud = new Audio("music.mp3");
+        aud.loop = true;
+        aud.play();
+        next();
     }
