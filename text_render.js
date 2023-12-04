@@ -104,21 +104,23 @@
     
     var el = document.querySelector('.text');
     var fx = new TextScramble(el);
-    
+    var timeout;
     var counter = 0;
     var next = function next() {
-      fx.setText(phrases[counter]).then(function () {
-        setTimeout(next, phrases[counter === 0 ? counter : counter - 1].length * 60);
-      });
-      counter = (counter + 1) % phrases.length;
+        fx.setText(phrases[counter]).then(function () {
+            timeout = setTimeout(next, phrases[counter === 0 ? counter : counter - 1].length * 60);
+        });
+        counter = (counter + 1) % phrases.length;
     };
 
     var clicked = false;
     if (!clicked){
-        fx.setText("click to start the animation");
+        fx.setText("click to start the animation (or to skip text)");
     }
     document.onclick = () => {
         if (clicked) {
+            clearTimeout(timeout)
+            next();
             return;
         }
         clicked = true;
