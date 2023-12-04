@@ -108,7 +108,6 @@
     var counter = 0;
     var next = function next() {
       fx.setText(phrases[counter]).then(function () {
-          counter === 0 ? console.log(phrases[counter].length * 60 / 1000 + " : sec") : console.log(phrases[counter - 1].length * 60/ 1000 + " : sec")
         setTimeout(next, phrases[counter === 0 ? counter : counter - 1].length * 60);
       });
       counter = (counter + 1) % phrases.length;
