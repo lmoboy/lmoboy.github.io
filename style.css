@@ -1,0 +1,143 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+html,
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: #0e0e0ffd;
+    height: 100%;
+    overflow: hidden; /* Hide scrollbars */
+}
+.container {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 1s ease;
+}
+.container-in {
+    position: absolute;
+}
+.text {
+    opacity: 1;
+    font-weight: 100;
+    font-size: 28px;
+    color: #fafafa;
+}
+
+.text-animation {
+    animation: text-animation 2s ease infinite;
+    opacity: 0;
+}
+
+
+
+
+
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 700px;
+    bottom: 40%;
+    border: darkgray solid 2px;
+    border-radius: 20px;
+    position: absolute;
+    animation: slide-portfolio-in 2s ease;
+    opacity: 1;
+}
+
+.portfolio-picture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -38.7%;
+    bottom: 31.5%;
+    height: 120px;
+    width: 120px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.portfolio-image {
+    height: 120px;
+    width: 120px;
+
+    position: static;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.portfolio-image:hover {
+    transform: scale(1.1);
+}
+.portfolio-info{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio-text{
+    position: fixed;
+    font-weight: 100;
+    font-size: 20px;
+    color: #fafafa;
+}
+
+.link-container {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 300px;
+    bottom: 0%;
+    border: darkgray solid 2px;
+    border-radius: 20px;
+    /*background: #0e0e0ffd;*/
+    backdrop-filter: blur(10px);
+}
+
+@keyframes blur-smooth-in {
+    0%{
+        filter: blur(0);
+    }
+    100%{
+        filter: blur(10px);
+    }
+}
+@keyframes slide-links-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes slide-portfolio-in {
+    0%{
+        opacity: 0;
+        bottom: 0vh;
+    }
+    100%{
+        opacity: 1;
+        bottom: 40%;
+    }
+
+}
+
+
+@keyframes text-animation {
+    0% {
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
