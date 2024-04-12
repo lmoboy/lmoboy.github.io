@@ -1,143 +1,186 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+@import "https://fonts.googleapis.com/css?family=Roboto+Mono:100";
 html,
 body {
-    font-family: 'Roboto Mono', monospace;
-    background: #0e0e0ffd;
-    height: 100%;
-    overflow: hidden; /* Hide scrollbars */
+  font-family: "Roboto Mono", monospace;
+  background: #0e0e0ffd;
+  height: 100%;
+  overflow: hidden; /* Hide scrollbars */
+}
+.audio-player{
+  bottom: 0;
+  position: absolute;
+}
+input[type="range"] {
+  appearance: none;
+  writing-mode: vertical-lr;
+  background-color: silver;
+  width: 2px;
+  height: 200px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 10px;
+  border-radius: 30px;
+  background: #ffffff;
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
 }
 .container {
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    transition: all 1s ease;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: all 1s ease;
 }
 .container-in {
-    position: absolute;
+  position: absolute;
 }
 .text {
-    opacity: 1;
-    font-weight: 100;
-    font-size: 28px;
-    color: #fafafa;
+  opacity: 1;
+  font-weight: 100;
+  font-size: 28px;
+  color: #fafafa;
 }
 
 .text-animation {
-    animation: text-animation 2s ease infinite;
-    opacity: 0;
+  animation: text-animation 2s ease infinite;
+  opacity: 0;
 }
 
-
+.volume-output {
+  color: white;
+  top: 0;
+  left: 50px;
+  font-size: x-large;
+}
 
 
 
 .portfolio-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    width: 700px;
-    bottom: 40%;
-    border: darkgray solid 2px;
-    border-radius: 20px;
-    position: absolute;
-    animation: slide-portfolio-in 2s ease;
-    opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 700px;
+  bottom: 40%;
+  border: darkgray solid 2px;
+  border-radius: 20px;
+  position: absolute;
+  animation: slide-portfolio-in 2s ease;
+  opacity: 1;
 }
 
 .portfolio-picture-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: -38.7%;
-    bottom: 31.5%;
-    height: 120px;
-    width: 120px;
-    position: relative;
-    transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 2.3%;
+  bottom: 31.5%;
+  height: 120px;
+  width: 120px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .portfolio-image {
-    height: 120px;
-    width: 120px;
+  height: 120px;
+  width: 120px;
 
-    position: static;
-    object-fit: cover;
-    border-radius: 20px;
-    transition: all 0.3s ease-in-out;
+  position: static;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
 .portfolio-image:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
-.portfolio-info{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.portfolio-info {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.portfolio-text{
-    position: fixed;
-    font-weight: 100;
-    font-size: 20px;
-    color: #fafafa;
+.portfolio-aboutme-text{
+  position: fixed;
+  font-weight: 100;
+  font-size: 20px;
+  color: #fafafa;
+}
+
+.portfolio-link-text{
+  position: fixed;
+  font-weight: 100;
+  font-size: 20px;
+  color: #fafafa;
+}
+.portfolio-text {
+  
+  position: relative;
+  top: -100px;
+  left: 50px;
+  font-weight: 100;
+  font-size: 20px;
+  color: #fafafa;
 }
 
 .link-container {
-    z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    width: 300px;
-    bottom: 0%;
-    border: darkgray solid 2px;
-    border-radius: 20px;
-    /*background: #0e0e0ffd;*/
-    backdrop-filter: blur(10px);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 300px;
+  bottom: 0%;
+  border: darkgray solid 2px;
+  border-radius: 20px;
+  /*background: #0e0e0ffd;*/
+  backdrop-filter: blur(10px);
 }
 
 @keyframes blur-smooth-in {
-    0%{
-        filter: blur(0);
-    }
-    100%{
-        filter: blur(10px);
-    }
+  0% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(10px);
+  }
 }
 @keyframes slide-links-in {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
 
 @keyframes slide-portfolio-in {
-    0%{
-        opacity: 0;
-        bottom: 0vh;
-    }
-    100%{
-        opacity: 1;
-        bottom: 40%;
-    }
-
+  0% {
+    opacity: 0;
+    bottom: 0vh;
+  }
+  100% {
+    opacity: 1;
+    bottom: 40%;
+  }
 }
-
 
 @keyframes text-animation {
-    0% {
-        opacity: 1;
-    }
-    50%{
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
