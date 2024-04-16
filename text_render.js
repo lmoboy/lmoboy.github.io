@@ -221,7 +221,7 @@ document["onclick"] = () => {
               d.classList.add("portfolio-link-text");
               t.classList.add("portfolio-link-text");
 
-              s.href = "https://steamcommunity.com/id/AzverexD/";
+              s.href = "https://steamcommunity.com/id/aka_abuser/";
               g.href = "https://github.com/lmoboy";
               t.href = "https://t.me/AzverexD";
 
